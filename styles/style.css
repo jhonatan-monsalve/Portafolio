@@ -1,0 +1,226 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root { /* a continuacion se declran los valores generales como variables*/
+  --color-primary: #201E43;
+  --color-secondary: #22D4FD;
+  --color-text: white;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Krona One', serif;
+}
+
+
+body {
+  /*height: 100vh;*/
+  box-sizing: border-box;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+}
+
+/* Estilos del header y la navegación */
+.header {
+  width:100%;
+  background-color: var(--color-primary);
+  padding: 2% 10% 0% 0%;
+  display: flex;
+  justify-content: center;
+ }
+
+.header__menu { 
+  width: 100%;
+  display: flex;
+  gap: 8%;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.header__menu__link a{
+  width: 100%;
+  color: var(--color-secondary);
+  text-align: center;
+  background-color: var(--color-primary);
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  font-size: 1.5rem;/* 1.5 rem, que equivale a 24 px, corresponde aproximadamente a 2.222 vh.*/
+  font-family:var(--font-primary);
+  text-decoration: none;
+  border: 2px solid var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  gap: 10%; 
+  font-weight: 600;
+  transition: color 0.3s ease;
+  margin: 0 10px; /* espacio entre los botones*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+  }
+
+.header__menu__link:hover {
+  color: var(--color-secondary);
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+/* Estilos de la presentación */
+.presentacion {
+  width: 100%;
+  display: flex;
+  align-items: flex-start; /* Esta propiedad alinea los elementos flex (en este caso, la imagen y el texto) al inicio del contenedor, es decir, en la parte superior */
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding:10% 10%;/* Agrega 6% de espacio en la parte superior y 15 % de espacio a los lados del contenedor */
+  justify-content: space-between;
+  gap:82px; /* Espacio entre las columnas */
+ }
+
+.presetacion__contenido {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Regular */
+  text-align: justify;
+  gap: 5px;
+}
+
+.presentacion__contenido__titulo {
+  font-family: var(--font-secondary);
+  font-size: 2.25rem;
+  margin:10px;
+}
+
+.presentacion__contenido__texto {
+  font-size: 1.5rem;
+  margin: 0.625rem 0rem;
+  gap:5px;
+}
+
+.presentacion__enlaces {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  gap: 20px; /* espacio entre los botones*/
+  flex-direction: column;
+  align-items: center;
+  }
+
+.presentacion__enlaces__subtitulo {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.presentacion__enlaces__link {
+  width: 80%;
+  text-align: center;
+  background-color: var(--color-primary);
+  padding: 1.34375rem 0rem;/* 21.5px 0  es equivalente a 1.34375rem 0rem */
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  gap: 10px;/* distancia entre el logo y el texto*/
+  color: var(--color-text);
+  transition: background-color 0.3s ease;
+}
+
+.presentacion__enlaces__link:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  }
+
+.presentacion__contenido__imagen {
+  width: 50%;
+  border-radius: 15px;
+  
+}
+
+.titulo-destaque {
+  color: var(--color-secondary);
+}
+
+.texto-destacado {
+  color: var(--color-text);
+}
+
+/* Estilos del footer */
+.footer-content {
+  background-color: var(--color-secondary);
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family:  var(--font-primary);
+  width: 100%;
+}
+
+.derechos {
+  color: var(--color-primary);
+}
+
+/* Punto de quiebre de la pantalla*/
+@media(max-width:1200px){ /* ajustar las imagenes de cuerdo a la pantalla*/
+  .header{
+    width: auto;
+    padding: 5%;
+   
+  }
+  .header__menu{
+    width: auto;
+    justify-content: center;
+    margin:5%;
+    border: 2%;
+  
+  }
+  /*
+  .header__menu__link a{
+    width: auto;
+    padding: 10%;
+    gap: 2%;
+    justify-content: center;
+    margin: 1%;
+  }*/
+
+  .header__menu__link a {
+    margin: auto;
+    width: 100%; /* Elimina el ancho fijo */
+    height: 150%; /* Elimina la altura fija */
+    padding: 2px 10px; /* Ajusta el padding según tus necesidades */
+    font-size: 100%; /* Ajusta el tamaño de la fuente al contenedor */
+    flex: 1; /* Esto hará que los 3 botones tengan el mismo ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el texto */
+    text-align: center;
+    gap: 10%;
+    margin: 5%;
+    border: 5%;
+  }
+
+
+  .presentacion{
+    flex-direction: column-reverse;/* se acomodan los elementos en columna y se ajustan al revez*/
+  padding: 5%;
+  }
+.presetacion__contenido{
+  width: 100%;
+  
+}
+ .presentacion__contenido__imagen{
+  width: 100%;
+  }
+
+}
